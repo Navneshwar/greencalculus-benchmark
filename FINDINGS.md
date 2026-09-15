@@ -43,7 +43,7 @@ perfectly:
 | Gemini 3.6 Flash | 404 | 58.8% |
 
 This is not a story about which vendor is smartest. It is about **calibration** —
-whether a model knows where its knowledge ends. Gemini 3.1 Pro refused 382 of 467
+whether a model knows where its knowledge ends. Gemini 3.1 Pro refused 390 of 467
 questions and was right two-thirds of the time when it spoke. Claude Opus 5
 refused 11 and was right 46% of the time.
 
