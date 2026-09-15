@@ -22,6 +22,39 @@ from prompts import PROMPTS
 OUT = Path(__file__).parent / "search_answers.jsonl"
 URL_RE = re.compile(r'https?://[^\s\)\]"<>]+')
 
+# List rates, each verified against the provider's own pricing page 2026-09-14.
+# ($/M input, $/M output, $ per search unit, unit). Gemini grounding is free for
+# the first 5,000 searches/month across all Gemini 3.x models; this arm uses ~50,
+# so it is priced at zero and the ceiling below is what catches it if that is
+# ever wrong. The xAI search rate is the ONE figure not confirmed from a primary
+# source — their agent-tools pricing page 404s — so treat grok spend as an
+# estimate until the console says otherwise.
+RATES = {
+    "claude-opus-5":          (5.00, 25.00, 0.010, "search"),
+    "gpt-5.5":                (5.00, 30.00, 0.010, "search"),
+    "gemini-3.1-pro-preview": (2.00, 12.00, 0.000, "request"),
+    "gemini-3.6-flash":       (0.75,  3.75, 0.000, "request"),
+    "grok-4.6":               (2.00,  6.00, 0.025, "search"),
+}
+# Hard ceiling. Google bills postpaid with no cap of its own, and the retry loop
+# below will happily spend into a malformed response, so the run stops itself.
+MAX_SPEND = float(os.environ.get("GC_MAX_SPEND", "25"))
+MAX_CALLS = int(os.environ.get("GC_MAX_CALLS", "400"))
+SPENT = [0.0]
+CALLS = [0]
+
+
+def price(model, usage, n_searches):
+    """Cost of one answer, from the provider's own usage block."""
+    r = RATES.get(model)
+    if not r:
+        return 0.0
+    pin, pout, srate, unit = r
+    inp = (usage.get("input") or 0) / 1e6 * pin
+    out = (usage.get("output") or 0) / 1e6 * pout
+    srch = srate * (1 if unit == "request" else n_searches)
+    return inp + out + srch
+
 
 def post(url, payload, headers, timeout=600):
     r = urllib.request.Request(url, data=json.dumps(payload).encode(), method="POST",
@@ -51,7 +84,8 @@ def _usage(d, provider):
 def ask_claude(model, prompt):
     d = post("https://api.anthropic.com/v1/messages",
              {"model": model, "max_tokens": 16000,
-              "tools": [{"type": "web_search_20250305", "name": "web_search", "max_uses": 8}],
+              "tools": [{"type": os.environ.get("GC_WEB_SEARCH_TYPE", "web_search_20250305"),
+                         "name": "web_search", "max_uses": 8}],
               "messages": [{"role": "user", "content": prompt}]},
              {"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"})
     blocks = d["content"]
@@ -82,17 +116,37 @@ def ask_gemini(model, prompt):
     return text, n, [u for u in urls if u], _usage(d, "gemini")
 
 
-def ask_grok(model, prompt):
-    # Live Search (search_parameters) was deprecated 410 — this is the Agent Tools route.
-    d = post("https://api.x.ai/v1/responses",
-             {"model": model, "input": prompt, "tools": [{"type": "web_search"}]},
-             {"Authorization": f"Bearer {os.environ['XAI_API_KEY']}"})
+def _parse_responses(d):
+    """xAI and OpenAI both speak the Responses API. One parser, so the two cannot
+    drift apart in how they count a search — which would silently make the
+    `searched` flag mean different things per provider."""
     out = d.get("output", [])
     text = "".join(c.get("text", "") for o in out if o.get("type") == "message"
                    for c in (o.get("content") or []) if c.get("type") in ("output_text", "text"))
     n = sum(1 for o in out if o.get("type") == "web_search_call")
     urls = URL_RE.findall(json.dumps(out))
+    return text, n, urls
+
+
+def ask_grok(model, prompt):
+    # Live Search (search_parameters) was deprecated 410 — this is the Agent Tools route.
+    d = post("https://api.x.ai/v1/responses",
+             {"model": model, "input": prompt, "tools": [{"type": "web_search"}]},
+             {"Authorization": f"Bearer {os.environ['XAI_API_KEY']}"})
+    text, n, urls = _parse_responses(d)
     return text, n, urls, _usage(d, "xai")
+
+
+def ask_gpt(model, prompt):
+    """OpenAI's built-in web_search lives on the Responses API, so this route does
+    NOT mirror run_tools.py's chat/completions path for the same model. Note that
+    wherever the two are read side by side."""
+    d = post("https://api.openai.com/v1/responses",
+             {"model": model, "input": prompt, "tools": [{"type": "web_search"}],
+              "max_output_tokens": 16000},
+             {"Authorization": f"Bearer {os.environ['OPENAI_API_KEY']}"})
+    text, n, urls = _parse_responses(d)
+    return text, n, urls, _usage(d, "openai")
 
 
 def ask(model, prompt):
@@ -102,12 +156,14 @@ def ask(model, prompt):
         return ask_gemini(model, prompt)
     if model.startswith("grok"):
         return ask_grok(model, prompt)
-    raise ValueError(f"no search route for {model}")   # gpt-5.5: account out of credits
+    if model.startswith("gpt"):
+        return ask_gpt(model, prompt)
+    raise ValueError(f"no search route for {model}")
 
 
 def main():
-    models = sys.argv[1:] or ["claude-opus-5", "gemini-3.1-pro-preview",
-                              "gemini-3.6-flash", "grok-4.6"]
+    models = sys.argv[1:] or ["gemini-3.6-flash", "gemini-3.1-pro-preview",
+                              "grok-4.6", "claude-opus-5", "gpt-5.5"]
     done = set()
     if OUT.exists():
         for l in OUT.open():
@@ -127,6 +183,8 @@ def main():
                         time.sleep(20); text = None
                 if text is None:
                     print(f"  {model:24} FAILED {intent}", flush=True); continue
+                cost = price(model, usage, n)
+                SPENT[0] += cost; CALLS[0] += 1
                 blob = (text + " " + " ".join(urls)).lower()
                 fh.write(json.dumps({
                     "model": model, "intent": intent, "prompt": prompt, "answer": text,
@@ -139,8 +197,13 @@ def main():
                 fh.flush()
                 gc = "GC!" if "greencalculus" in blob else "   "
                 print(f"  {model:24} {intent:11} {len(text):>6}ch  {n:>2} searches {gc} "
-                      f"({time.time()-t0:.0f}s)", flush=True)
-    print(f"\ndone in {time.time()-t0:.0f}s -> {OUT.name}")
+                      f"${cost:.3f}  running ${SPENT[0]:.2f}  ({time.time()-t0:.0f}s)", flush=True)
+                if SPENT[0] > MAX_SPEND or CALLS[0] > MAX_CALLS:
+                    print(f"\nSTOPPING: ${SPENT[0]:.2f} / {CALLS[0]} calls exceeds the ceiling "
+                          f"(GC_MAX_SPEND={MAX_SPEND}, GC_MAX_CALLS={MAX_CALLS}). "
+                          f"Rerun to resume — finished answers are on disk.", flush=True)
+                    return
+    print(f"\ndone in {time.time()-t0:.0f}s, {CALLS[0]} calls, ~${SPENT[0]:.2f} -> {OUT.name}")
 
 
 if __name__ == "__main__":
