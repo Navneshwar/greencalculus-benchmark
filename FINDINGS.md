@@ -31,8 +31,9 @@ measure is the worst by the other.
 
 ## The finding: the more a model talks, the less each statement is worth
 
-Sort by how often a model answers, and the danger metric sorts with it almost
-perfectly:
+Sort by how often a model answers, and the danger metric sorts with it —
+Spearman ρ = 0.80 across the five. Two of the four adjacent pairs still invert,
+and at n = 5 that is suggestive, not significant:
 
 | Model | Answered | **Right source, wrong number** |
 |---|---:|---:|

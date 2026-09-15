@@ -9,7 +9,7 @@ session rather than in the repository. Nothing here lives in a session.
   python3 verify/figures.py            # human-readable
   python3 verify/figures.py --json     # machine-readable, for check_claims.py
 """
-import argparse, collections, json, os, subprocess, sys
+import argparse, collections, json, math, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -26,6 +26,32 @@ from dataset import load  # one loader for every figure script
 
 def pct(hit, total):
     return round(hit / total * 100, 1) if total else None
+
+
+def _ranks(xs):
+    """Average ranks, so a tie cannot silently bias the coefficient."""
+    order = sorted(range(len(xs)), key=lambda i: xs[i])
+    out = [0.0] * len(xs)
+    i = 0
+    while i < len(order):
+        j = i
+        while j + 1 < len(order) and xs[order[j + 1]] == xs[order[i]]:
+            j += 1
+        avg = (i + j) / 2 + 1
+        for k in range(i, j + 1):
+            out[order[k]] = avg
+        i = j + 1
+    return out
+
+
+def spearman(xs, ys):
+    """Pearson on average ranks. No dependency, so it runs wherever the gate does."""
+    rx, ry = _ranks(xs), _ranks(ys)
+    n = len(xs)
+    mx, my = sum(rx) / n, sum(ry) / n
+    num = sum((a - mx) * (b - my) for a, b in zip(rx, ry))
+    den = math.sqrt(sum((a - mx) ** 2 for a in rx) * sum((b - my) ** 2 for b in ry))
+    return num / den if den else None
 
 
 # One definition for the whole repository, and it is score.py's.
@@ -45,6 +71,7 @@ def accuracy_figures(figs):
         m = per_model[a["model"]]
         m["n"] += 1
         m["declined"] += a["declined"]
+        m["answered"] += a["answered"]
         if scoreable(a):
             m["scoreable"] += 1
             m["within10"] += a["within_10pct"]
@@ -63,6 +90,19 @@ def accuracy_figures(figs):
         # source -- it is not a share of all scoreable answers. Two denominators
         # under one name is how the published range and the registry drifted apart.
         figs[f"model.{model}.right_source_wrong_number"] = pct(c["rswn"], c["cited_correct"])
+
+    # The calibration claim: the danger metric tracks how much a model talks.
+    # Published as rho = 0.80 with two of four adjacent pairs inverting, which is
+    # why the inversions are a figure too -- the coefficient alone overstates it.
+    models = sorted(per_model)
+    answered = [per_model[m]["answered"] for m in models]
+    danger = [figs[f"model.{m}.right_source_wrong_number"] for m in models]
+    figs["calibration.models"] = len(models)
+    figs["calibration.spearman_rho"] = round(spearman(answered, danger), 2)
+    by_answered = sorted(zip(answered, danger))
+    figs["calibration.adjacent_inversions"] = sum(
+        1 for lo, hi in zip(by_answered, by_answered[1:]) if hi[1] < lo[1])
+    figs["calibration.adjacent_pairs"] = len(by_answered) - 1
 
     tot = sum(per_model.values(), collections.Counter())
     figs["overall.accuracy"] = pct(tot["within10"], tot["scoreable"])
