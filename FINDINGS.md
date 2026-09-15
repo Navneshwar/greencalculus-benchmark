@@ -45,7 +45,7 @@ perfectly:
 This is not a story about which vendor is smartest. It is about **calibration** —
 whether a model knows where its knowledge ends. Gemini 3.1 Pro refused 390 of 467
 questions and was right two-thirds of the time when it spoke. Claude Opus 5
-refused 11 and was right 46% of the time.
+refused 37 and was right 46% of the time.
 
 For carbon accounting that trade is not neutral. A refusal costs you a lookup.
 A confident wrong number costs you a misstated disclosure.
@@ -111,11 +111,11 @@ given), plus one case where Claude looked up a neighbouring key and said so.
 
 | Model | Named a source | Named the *right* source |
 |---|---:|---:|
-| GPT-5.5 | 56.3% | 93.5% |
-| Gemini 3.6 Flash | 76.9% | 91.9% |
-| Claude Opus 5 | 75.2% | 90.0% |
-| Gemini 3.1 Pro | 13.5% | 85.7% |
-| Grok 4.6 | 22.1% | 82.5% |
+| GPT-5.5 | 53.7% | 94.0% |
+| Gemini 3.6 Flash | 71.7% | 91.9% |
+| Claude Opus 5 | 71.7% | 89.9% |
+| Gemini 3.1 Pro | 12.0% | 83.9% |
+| Grok 4.6 | 21.6% | 82.2% |
 
 Every model attributes *well* — around 90% name the publisher the number really
 comes from. And for the talkative ones, the majority of those correctly-attributed

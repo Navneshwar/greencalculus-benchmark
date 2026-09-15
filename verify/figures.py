@@ -50,6 +50,7 @@ def accuracy_figures(figs):
             m["within10"] += a["within_10pct"]
             m["within50"] += a["within_50pct"]
             m["rswn"] += a["right_source_wrong_number"]
+            m["cited_correct"] += a["citation_correct"]
         if a["cited_a_source"]:
             m["cited"] += 1
 
@@ -58,7 +59,10 @@ def accuracy_figures(figs):
         figs[f"model.{model}.within50"] = pct(c["within50"], c["scoreable"])
         figs[f"model.{model}.declined"] = pct(c["declined"], c["n"])
         figs[f"model.{model}.cited"] = pct(c["cited"], c["n"])
-        figs[f"model.{model}.right_source_wrong_number"] = pct(c["rswn"], c["scoreable"])
+        # score.py's metric of this name is conditional on having named the right
+        # source -- it is not a share of all scoreable answers. Two denominators
+        # under one name is how the published range and the registry drifted apart.
+        figs[f"model.{model}.right_source_wrong_number"] = pct(c["rswn"], c["cited_correct"])
 
     tot = sum(per_model.values(), collections.Counter())
     figs["overall.accuracy"] = pct(tot["within10"], tot["scoreable"])
@@ -86,7 +90,7 @@ def paired_figures(figs):
     for r in rows:
         c = agg[(r["model"], r["condition"])]
         c["n"] += 1
-        if r["extracted_value"] is not None:
+        if scoreable(r):
             c["scoreable"] += 1
             c["within10"] += bool(r["within_10pct"])
     for (model, condition), c in sorted(agg.items()):
