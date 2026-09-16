@@ -1,0 +1,3178 @@
+{
+  "answers": 125,
+  "searched": 109,
+  "resolvable_citations": 2051,
+  "opaque_citations": 410,
+  "domains": {
+    "climatiq.io": {
+      "answers": 74,
+      "models": 5,
+      "mentions": 277
+    },
+    "github.com": {
+      "answers": 30,
+      "models": 5,
+      "mentions": 83
+    },
+    "gov.uk": {
+      "answers": 28,
+      "models": 5,
+      "mentions": 54
+    },
+    "emissions.dev": {
+      "answers": 27,
+      "models": 5,
+      "mentions": 54
+    },
+    "ghgprotocol.org": {
+      "answers": 27,
+      "models": 5,
+      "mentions": 32
+    },
+    "epa.gov": {
+      "answers": 25,
+      "models": 4,
+      "mentions": 51
+    },
+    "greencalculus.com": {
+      "answers": 22,
+      "models": 3,
+      "mentions": 31
+    },
+    "carboninterface.com": {
+      "answers": 16,
+      "models": 5,
+      "mentions": 18
+    },
+    "emissionfactors.net": {
+      "answers": 15,
+      "models": 2,
+      "mentions": 17
+    },
+    "assets.publishing.service.gov.uk": {
+      "answers": 13,
+      "models": 3,
+      "mentions": 20
+    },
+    "ibm.com": {
+      "answers": 12,
+      "models": 5,
+      "mentions": 12
+    },
+    "emission-factors.com": {
+      "answers": 12,
+      "models": 3,
+      "mentions": 12
+    },
+    "cornerstonedata.org": {
+      "answers": 10,
+      "models": 4,
+      "mentions": 10
+    },
+    "secrreporting.co.uk": {
+      "answers": 10,
+      "models": 3,
+      "mentions": 13
+    },
+    "persefoni.com": {
+      "answers": 10,
+      "models": 5,
+      "mentions": 11
+    },
+    "carbonsutra.com": {
+      "answers": 10,
+      "models": 4,
+      "mentions": 12
+    },
+    "iea.org": {
+      "answers": 10,
+      "models": 3,
+      "mentions": 16
+    },
+    "keyesg.com": {
+      "answers": 9,
+      "models": 4,
+      "mentions": 9
+    },
+    "netzerocompare.com": {
+      "answers": 9,
+      "models": 4,
+      "mentions": 9
+    },
+    "sustainmetrics.net": {
+      "answers": 9,
+      "models": 2,
+      "mentions": 11
+    },
+    "ccacoalition.org": {
+      "answers": 9,
+      "models": 1,
+      "mentions": 9
+    },
+    "carbonapi.io": {
+      "answers": 8,
+      "models": 5,
+      "mentions": 11
+    },
+    "compareyourfootprint.com": {
+      "answers": 8,
+      "models": 4,
+      "mentions": 8
+    },
+    "ditchcarbon.com": {
+      "answers": 8,
+      "models": 3,
+      "mentions": 15
+    },
+    "circularecology.com": {
+      "answers": 8,
+      "models": 3,
+      "mentions": 9
+    },
+    "app.electricitymaps.com": {
+      "answers": 8,
+      "models": 2,
+      "mentions": 8
+    },
+    "openco2.net": {
+      "answers": 7,
+      "models": 4,
+      "mentions": 8
+    },
+    "normative.io": {
+      "answers": 7,
+      "models": 4,
+      "mentions": 8
+    },
+    "eco-shaper.com": {
+      "answers": 7,
+      "models": 3,
+      "mentions": 7
+    },
+    "dcycle.io": {
+      "answers": 7,
+      "models": 3,
+      "mentions": 7
+    },
+    "publicapis.io": {
+      "answers": 7,
+      "models": 3,
+      "mentions": 10
+    },
+    "co2api.fi": {
+      "answers": 7,
+      "models": 2,
+      "mentions": 7
+    },
+    "docs.climatiq.io": {
+      "answers": 7,
+      "models": 1,
+      "mentions": 10
+    },
+    "wiki.carbonaccountingalliance.com": {
+      "answers": 7,
+      "models": 2,
+      "mentions": 7
+    },
+    "int-web.climatiq.io": {
+      "answers": 7,
+      "models": 2,
+      "mentions": 7
+    },
+    "icao.int": {
+      "answers": 6,
+      "models": 3,
+      "mentions": 6
+    },
+    "climatetrace.org": {
+      "answers": 6,
+      "models": 5,
+      "mentions": 9
+    },
+    "footprintlab.io": {
+      "answers": 6,
+      "models": 2,
+      "mentions": 6
+    },
+    "canada.ca": {
+      "answers": 6,
+      "models": 1,
+      "mentions": 6
+    },
+    "carbonaccountingfinancials.com": {
+      "answers": 6,
+      "models": 3,
+      "mentions": 26
+    },
+    "ipcc-nggip.iges.or.jp": {
+      "answers": 6,
+      "models": 2,
+      "mentions": 11
+    },
+    "apis.io": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 6
+    },
+    "theema.org.uk": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 5
+    },
+    "getambee.com": {
+      "answers": 5,
+      "models": 3,
+      "mentions": 5
+    },
+    "en.wikipedia.org": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 5
+    },
+    "learn.microsoft.com": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 6
+    },
+    "netzero.salesforce.com": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 6
+    },
+    "catalog.data.gov": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 5
+    },
+    "ourworldindata.org": {
+      "answers": 5,
+      "models": 3,
+      "mentions": 5
+    },
+    "iea.blob.core.windows.net": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 6
+    },
+    "legacy-docs.watttime.org": {
+      "answers": 5,
+      "models": 2,
+      "mentions": 5
+    },
+    "youtube.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "zerocarbon.org.in": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "unravelcarbon.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "apideck.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 4
+    },
+    "neo.eco": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "carbonintensity.org.uk": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 4
+    },
+    "medium.com": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "cloudcarbonfootprint.org": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "netnada.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 5
+    },
+    "exiobase.eu": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "openlca.org": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 5
+    },
+    "epdlogy.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 4
+    },
+    "cbamguide.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 6
+    },
+    "carboneer.earth": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 6
+    },
+    "sustainabilitymag.com": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "saasworthy.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "northstarcarbon.com": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "zenodo.org": {
+      "answers": 4,
+      "models": 3,
+      "mentions": 4
+    },
+    "carbonova.ai": {
+      "answers": 4,
+      "models": 1,
+      "mentions": 4
+    },
+    "publicapi.dev": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "markaicode.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "scribd.com": {
+      "answers": 4,
+      "models": 1,
+      "mentions": 4
+    },
+    "ghgptechassistance.zendesk.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 6
+    },
+    "pypi.org": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "web.archive.org": {
+      "answers": 4,
+      "models": 1,
+      "mentions": 8
+    },
+    "ecohedge.com": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "pwc.co.uk": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 4
+    },
+    "arxiv.org": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 16
+    },
+    "watttime.org": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 9
+    },
+    "ecoinvent.org": {
+      "answers": 4,
+      "models": 2,
+      "mentions": 7
+    },
+    "publicapis.dev": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "lune.co": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 5
+    },
+    "coolset.com": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "sumday.io": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "carbonaltdelete.eu": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "accountingcarbon.com": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "regreener.earth": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "watershed.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "iacbam.org": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "efrag.org": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 10
+    },
+    "onestopesg.com": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "datacentremagazine.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "pulsora.com": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 4
+    },
+    "codecarbon.io": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "greensoftware.foundation": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "19january2021snapshot.epa.gov": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 5
+    },
+    "docs.lune.co": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 9
+    },
+    "worldpopulationreview.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "gitnux.org": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 4
+    },
+    "cledara.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "help.sap.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "smarterway.ai": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "support.carbonaltdelete.eu": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "pmc.ncbi.nlm.nih.gov": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "gitmemories.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "openpublicapis.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "api.carbonintensity.org.uk": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 5
+    },
+    "smartfreightcentre.org": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 5
+    },
+    "arbor.eco": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "1clickimpact.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "workiva.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "itssimple.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "greentryst.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 4
+    },
+    "vercoglobal.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "climatebase.org": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "carbonly.ai": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 6
+    },
+    "doi.org": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "dataverse.harvard.edu": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "data.ademe.fr": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "help.sumday.io": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 7
+    },
+    "nexus.openlca.org": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 3
+    },
+    "taxation-customs.ec.europa.eu": {
+      "answers": 3,
+      "models": 3,
+      "mentions": 17
+    },
+    "avarni.co": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 4
+    },
+    "esgnews.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "apify.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 15
+    },
+    "glama.ai": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 10
+    },
+    "developers.google.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 9
+    },
+    "crewdle.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 3
+    },
+    "dev.to": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "thestartupfounder.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "help.electricitymaps.com": {
+      "answers": 3,
+      "models": 2,
+      "mentions": 4
+    },
+    "51tocarbonzero.com": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "westoncompliance.co.uk": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "pith.science": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "energy.gov": {
+      "answers": 3,
+      "models": 1,
+      "mentions": 3
+    },
+    "manglai.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "esgtoday.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "connect.earth": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "greenprojecttech.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "sweep.net": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "gartner.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "sap.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "businessinsider.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "amazon.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "opendata.aws": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "freightos.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "g2.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "ecofreight.co": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 4
+    },
+    "salesforce.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "fiveglaciers.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "europa.eu": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "hhc.earth": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "continuuiti.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "getecodex.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "lobehub.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 4
+    },
+    "emmi.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "carboncloud.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "puro.earth": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "myclimate.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "netzerohub.sg": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "opennetzero.org": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "datarescueproject.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "keramida.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "carbonmaps.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "co2ai.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "keslio.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "mycelium.global": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 3
+    },
+    "kabaun.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "surfboardpayments.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "sustainabletravel.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "pmarketresearch.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "docs.oracle.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "npmjs.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbonsmart.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "clevel.co.uk": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "developer.ibm.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "climatetrade.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbonmark.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "docs.getcarbon.co": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "sbs.eco": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "resources.cozero.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "datarade.ai": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "gem.wiki": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "10.140.96.211:3000": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbonsorted.co.uk": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbontrust.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "laqm.defra.gov.uk": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "eea.europa.eu": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "searoutes.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 3
+    },
+    "measuringemissionsguide.environment.govt.nz": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "cfpub.epa.gov": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "mybreeze.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "reida.ch": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "ey.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "openriskmanual.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "kpmg.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "corporatedisclosures.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "eco-act.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "bouncewatch.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "apitracker.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "eliteai.tools": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "aws.amazon.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "edgar.jrc.ec.europa.eu": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "ipcc-data.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "apps.ipcc.ch": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "permanent.access.gpo.gov": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "19january2017snapshot.epa.gov": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "base-empreinte.ademe.fr": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 3
+    },
+    "nosgestesclimat.fr": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "data.niaid.nih.gov": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "co2-iq.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "spglobal.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "infoset.help": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "esgpost.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "academia.edu": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "knowledgehub.efrag.org": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "viewpoint.pwc.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "eur-lex.europa.eu": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 4
+    },
+    "publications.jrc.ec.europa.eu": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "mcpnow.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "chatforest.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "pubs.acs.org": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 3
+    },
+    "wonderingchimp.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "sci-guide.greensoftware.foundation": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "electricitymaps.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "data.gov.ie": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "techcrunch.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "developers.thegreenwebfoundation.org": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbon-intensity.github.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "acclaro-advisory.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "jrpsolutions.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "teamenergy.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "carbonfootprint.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "asuene.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "wbcsd.github.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 7
+    },
+    "senken.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 4
+    },
+    "knowesg.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "nature.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "fedcenter.gov": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "support.ecoinvent.org": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 4
+    },
+    "sciencedirect.com": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 3
+    },
+    "docs.patch.io": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "gov.uk\\": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "doc.agribalyse.fr": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 2
+    },
+    "ipcc.ch": {
+      "answers": 2,
+      "models": 1,
+      "mentions": 4
+    },
+    "gustavwengel.dk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sustamize.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "skylimate.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "weglobalstudios.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "tabithawhiting.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "fintech.global": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "earth5r.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "iges.or.jp": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "energysecurity.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "zendesk.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "neso.energy": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ptvgroup.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecoenclose.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "notice.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "kanopylabs.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "opencost.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecologits.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "nih.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "data.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "seedling.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "agribalyse.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "myco2suite.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cdp.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cbamdefaults.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cozero.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "unep.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sustainifyai.co.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mitigate.dev": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "terratwin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "forward-earth.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "aibase.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climatenest.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcp.so": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "payloda.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "zylalabs.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "welcometothejungle.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sfltech.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "getlago.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "phocuswire.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "eiturbanmobility.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "lunedata.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "eqtgroup.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "unit.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonfuture.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sage.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "patch.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "techtarget.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "useoffstream.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "debevoise.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "baisma.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dataintelo.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "squake.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "noteapiconnector.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "peng-nlp.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "searates.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "rapidapi.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "github.blog": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "reddit.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "qiita.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "peerspot.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "zevero.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "econos-esg.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cloudfront.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "planninginspectorate.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "publicnow.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "rml.com.au": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "net0.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "centrica.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bonfruit.co.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "corecanopy.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "theedgesingapore.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cobank.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonchain.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "emission3.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "wirtek.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "smithery.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "kanop.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcpservers.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecfr.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bsbedge.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ja.wikipedia.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.omniverse.nvidia.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "drewry.co.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cooler.dev": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "afterlogic.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ibm.github.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cdr.fyi": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gaiacompany.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonskyindex.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dataforb2b.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "coingape.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "saasmarket.app": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sustainabilityreportingstandards.co.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "coldiq.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "developer.mastercard.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cbinsights.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "aps.autodesk.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "in.linkedin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "techinsights.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "emsmastery.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonbrief.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "legislation.data.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "espo.nasa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "developer-portal.trade.defra.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 3
+    },
+    "awesome.ecosyste.ms": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "findapis.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "environment.data.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 6
+    },
+    "digital.defra.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "naei.energysecurity.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecotransit.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "academy.smartfreightcentre.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "developer.myptv.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "standards.iteh.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "iifa.ie": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "clecat.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 3
+    },
+    "carbonkit.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "feport.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "smart-freight-centre-media.s3.amazonaws.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "api2cart.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gazette.nat.gov.tw": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "wordpress.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mckinsey.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "baymard.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "affichage-environnemental.ecobalyse.beta.gouv.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "passportpro.app": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mercadokit.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "zigpoll.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "askoptimize.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "hiddentechies.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "help.ecologi.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbon-badge.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gb-gbt.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "smartsmssolutions.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "stradalex.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ekobon.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "roobykon.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "greenclaims-scanner.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "itu.int": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ezcommerce.us": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climatecooperation.cn": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "easyappsecom.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dhl.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "inderes.se": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "forbes.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "apps.shopify.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ahya.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "generatezero.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "pwc.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "assets.marketplace.spglobal.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "grvt.helpscoutdocs.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "esg-advising.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "zfolio.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "listcorp.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "public.unpri.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cdn.cdp.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "finansnorge.no": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "craft.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "6sense.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "patch-diff.githubusercontent.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "theclimateregistry.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "webcatalog.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ca.linkedin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbon-minds.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cloverly.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "app.snowflake.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "llmscout.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "tracxn.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "emergent.sh": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "green-api.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mapsplatform.google.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "npm.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "morphic.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.greenpt.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "api.websitecarbon.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "crawlora.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "coinstats.app": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "flight-carbon-api.vercel.app": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "coolclimate.berkeley.edu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "futureagi.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cloud-carbon-footprint.github.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "hypereal.tech": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "codefling.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "capterra.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ccapi.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "spdx.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "campd.epa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "legislation.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "intuitionlabs.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ukconversionfactorscarbonsmart.co.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "agledx.ccafs.cgiar.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ember-energy.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 4
+    },
+    "inis.iaea.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "fr.wikipedia.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "scope3navigator.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ember-climate.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "data.europa.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "ghginstitute.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "openei.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ceq.doe.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "eia.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ww2.arb.ca.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dev.data.gouv.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "help.salesforce.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "explore.openaire.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "opendatafrance.gitbook.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "interactive-atlas.ipcc.ch": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "figshare.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climate-advisory-board.europa.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "abc-transitionbascarbone.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "keskkonnaamet.ee": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "infogram.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "news.metal.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "tulli.fi": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "iisd.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "university.obi.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "legislation.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "socious.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "wtocenter.vn": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "service.betterregulation.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "tool.teamzlab.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "csrdpro.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "domeba.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "csrd-experts.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cfrr.worldbank.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cubemos.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "esg-one.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "aura.abdn.ac.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbontool.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bravegen.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.bewo.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "fairsupply.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "horizonesg.global": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "nasdaq.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonimpacthq.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sustainalyse.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climatise.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sopact.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "futureproofed.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "endecarb.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ballotpedia.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "globalfinregblog.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gml.noaa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 4
+    },
+    "dlthub.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gridpulse.network": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "apidev.accuweather.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "catalog-beta.data.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dataportalforcities.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "code.googlesource.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.owid.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "erddap.gml.noaa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "archive.md": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "agdatashop.csiro.au": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "api.climatetrace.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "app-electricitymaps-com.translate.goog": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.meteonorm.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "flowingdata.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "travelimpactmodel.googleapis.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "theicct.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "linkedin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "conare.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bloomberg.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gozero.se": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cnaught.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "okaneland.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "grooper.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "hackernoon.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "runcycles.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "insideaipolicy.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "omdena.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "jentic.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sacra.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "news.ycombinator.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cscale.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "apiscout.dev": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "clovery.netlify.app": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonanalytics.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbon-suite.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "greenly.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "globalchanger.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "es.catapult.org.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ukerc.rl.ac.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climateessentials.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "doloop.energy": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "iasplus.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "lawinsider.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonindependent.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "sprih.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "inriver.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecoclaim.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "envirly.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "boutique.afnor.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "fiegenbaum.solutions": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonintelligence.green": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "pubmed.ncbi.nlm.nih.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "statista.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "passportcraft.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ecochain.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "oneclicklca.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cleansomethingfornothing.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "tracker.carbongap.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "westwoodsourcing.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "digiprodpass.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dpp-tool.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "presgo.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "files.sciencebasedtargets.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "sciencebasedtargets.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "foresightiq.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbone.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "storerocket.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dovu.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "groups.google.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "pkg.go.dev": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "openinframap.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gitplanet.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.watttime.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "portal.electricitymaps.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "glassdoor.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "glassdoor.co.in": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.carboninterface.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "producthunt.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "thegoodapi.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "us.fitgap.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "wifitalents.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climatechange.chicago.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "pr.columbiacountyspotlight.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "portfoliomanager.energystar.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "finance.yahoo.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "pasteur.epa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "manilatimes.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "globenewswire.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "portal.datarescueproject.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "hellocarbo.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "oakbon.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.earthster.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bilancarbone-methode.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "orki.green": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mayerbrown.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "integritynext.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dart.deloitte.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "esgsource.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ebf.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "climateseed.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "csrd-tools.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cooley.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "grantthornton.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "iss-corporate.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "commonwealthclimatelaw.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "esma.europa.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "worldmetrics.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbontrail.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "our-trace.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "minimum.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "image-ppubs.uspto.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "self-help.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "smithschool.ox.ac.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "olivegaea.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "stepchange.earth": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "archestra.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcp.aibase.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.codecarbon.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "playbooks.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mdpi.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 2
+    },
+    "docs.carbon-transparency.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.aws.amazon.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "apps.carboncloud.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.publishing.service.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "content-api.publishing.service.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "api.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "imo.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "iata.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "schema.org\\": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gs1.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "schema.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "ftc.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "green-forum.ec.europa.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "lcadatabase.sphera.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "affichage-environnemental.ademe.fr": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.carbonkit.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "api.ember-energy.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "archive.ipcc-nggip.iges.or.jp": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "edg.epa.gov": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "dcceew.gov.au": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "hbefa.net": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "nationalarchives.gov.uk": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "creativecommons.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "open.canada.ca": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "openlineage.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.carbon.ms": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    }
+  }
+}
