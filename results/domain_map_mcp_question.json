@@ -1,0 +1,183 @@
+{
+  "answers": 5,
+  "searched": 5,
+  "resolvable_citations": 87,
+  "opaque_citations": 26,
+  "domains": {
+    "carbonsutra.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 4
+    },
+    "github.com": {
+      "answers": 4,
+      "models": 4,
+      "mentions": 15
+    },
+    "lobehub.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 4
+    },
+    "getecodex.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "emmi.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "mycelium.global": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 3
+    },
+    "keyesg.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "dcycle.io": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "chatforest.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 2
+    },
+    "glama.ai": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 7
+    },
+    "developers.google.com": {
+      "answers": 2,
+      "models": 2,
+      "mentions": 8
+    },
+    "climatenest.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "aibase.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "forward-earth.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "terratwin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcp.so": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "carbonaltdelete.eu": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcpservers.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "kanop.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "smithery.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "theicct.org": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "okaneland.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "mcpnow.io": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "gozero.se": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "docs.getcarbon.co": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "linkedin.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "conare.ai": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "bloomberg.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "cnaught.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "travelimpactmodel.googleapis.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "npmjs.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "apify.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 13
+    },
+    "docs.carbon.ms": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "greencalculus.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    },
+    "emission-factors.com": {
+      "answers": 1,
+      "models": 1,
+      "mentions": 1
+    }
+  }
+}
