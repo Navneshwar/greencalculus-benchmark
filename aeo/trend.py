@@ -236,6 +236,9 @@ def main():
             if not between:
                 print("      (nothing logged — if that is wrong, timeline.tsv is stale)")
             for a in between:
+                # Only "shipped" is live. "pending" is a PR someone else has to
+                # merge — it cannot have moved a model, and reading it as though
+                # it had is how a flat result gets blamed on the wrong thing.
                 flag = "" if a.get("status") == "shipped" else f"  [{a.get('status')}]"
                 print(f"      {a['date']}  {a.get('surface',''):<12} {a.get('what','')}{flag}")
         future = [a for a in anns if a["date"] > dates[-1]]

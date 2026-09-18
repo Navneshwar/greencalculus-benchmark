@@ -10,10 +10,20 @@
 # Add the row ON THE DAY. A date reconstructed from memory a fortnight later is
 # the thing this file exists to stop.
 #
-# status: shipped = live and crawlable | planned = dated, not yet out
+# status: shipped = live and crawlable
+#         pending = submitted, waiting on someone else to merge it. NOT live,
+#                   and the date is when we acted, not when it lands. A
+#                   public-apis entry sat CONFLICTING for four weeks reading as
+#                   done; submitted is not shipped, and only shipped moves a model.
+#         planned = dated, not yet out
 # surface: measurement | github | hn | reddit | linkedin | listing | site
 date	status	surface	what	url
 2026-09-10	shipped	measurement	AEO baseline, web access OFF — 25 prompts x 5 models	aeo/answers.jsonl
 2026-09-14	shipped	measurement	AEO baseline, web access ON — the panel's first point	aeo/search_answers.jsonl
 2026-09-22	planned	hn	Benchmark findings post — "LLMs name the right source and still give the wrong number"	
 2026-09-29	planned	hn	Vendor study — "We asked 5 LLMs which carbon-data vendor to use"	
+2026-09-18	shipped	github	OpenAPI 3.1 spec published as a file + weekly sync (sdk#36)	https://github.com/greencalculus/greencalculus-sdk/blob/main/spec/openapi.json
+2026-09-18	shipped	listing	public-apis PR unblocked — was CONFLICTING for 4 weeks, now mergeable	https://github.com/public-apis/public-apis/pull/6984
+2026-09-11	pending	listing	GreenSoftwareDirectory #104 — open, mergeable, awaiting maintainer	https://github.com/github/GreenSoftwareDirectory/pull/104
+2026-09-11	pending	listing	awesome-green-software #231 — open, clean, awaiting maintainer	https://github.com/Green-Software-Foundation/awesome-green-software/pull/231
+2026-09-10	pending	listing	APIs.guru #3277 — open, repo dormant since April, 2045 open issues	https://github.com/APIs-guru/openapi-directory/issues/3277
