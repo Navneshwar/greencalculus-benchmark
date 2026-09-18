@@ -37,15 +37,65 @@ CLAIM_RE = re.compile(
 )
 
 
+# Page furniture whose numbers belong to OTHER documents. The source matrix
+# prints bibliographic metadata about every source we cite — journal page
+# numbers, EU grant numbers, archive snapshot ids, and figures quoted from the
+# cited work itself. The related-content cards print one-line summaries of other
+# pages. None of it is a claim this page makes about our data, and treating it as
+# one made the gate fail on "38,700 farms" from a Poore & Nemecek card.
+#
+# Allowlisting those numbers would have been the wrong fix: it would also wave
+# through the next genuinely wrong number that happens to land inside a widget.
+# Scope the gate to the article's own prose instead.
+FURNITURE = ("gc-srcmx", "gc-related-card", "gc-related-grid")
+
+
+def drop_subtrees(text, classes=FURNITURE):
+    """Remove each element whose class marks it as furniture, with its children.
+
+    Depth-counted rather than regex-matched to the closing tag: these contain
+    nested divs, and a non-greedy `.*?</div>` would cut at the first inner close
+    and leave most of the subtree behind.
+
+    Returns (text, dropped_count) — main() prints the count, because a filter
+    that silently stops matching turns a red gate green, which is worse than a
+    red gate.
+    """
+    dropped = 0
+    pattern = re.compile(
+        r"<(?P<tag>div|section|aside|ul|ol|li|table|nav)\b[^>]*\bclass=\"[^\"]*\b(?:"
+        + "|".join(re.escape(c) for c in classes) + r")\b[^\"]*\"[^>]*>", re.I)
+    while True:
+        m = pattern.search(text)
+        if not m:
+            return text, dropped
+        tag = m.group("tag")
+        scan = re.compile(rf"<(/?){tag}\b[^>]*?(/?)>", re.I)
+        depth, end = 1, m.end()
+        for t in scan.finditer(text, m.end()):
+            if t.group(2) == "/":            # self-closing, no depth change
+                continue
+            depth += -1 if t.group(1) else 1
+            if depth == 0:
+                end = t.end()
+                break
+        else:
+            end = len(text)                  # unbalanced: drop to the end
+        text = text[:m.start()] + " " + text[end:]
+        dropped += 1
+
+
 def strip_markup(text, kind):
     if kind == "tex":
         text = re.sub(r"%.*", "", text)                 # TeX comments
         text = text.replace(r"\%", "%").replace("{,}", ",")
-        return text
+        return text, 0
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)  # engineering summaries
     text = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", text, flags=re.S | re.I)
+    text, dropped = drop_subtrees(text)
+    present = sum(1 for c in FURNITURE if c in text)
     text = re.sub(r"<[^>]+>", " ", text)
-    return html.unescape(text)
+    return html.unescape(text), (dropped, present)
 
 
 # Years, DOI paths and standard numbers are identifiers, not claims about data.
@@ -117,15 +167,27 @@ def main():
         surfaces = SURFACES + surfaces
 
     failures, checked, allowed = [], 0, 0
+    blind = []
     for name, src in surfaces:
         if src.startswith("http"):
-            text = strip_markup(fetch(src), "html")
+            text, furniture = strip_markup(fetch(src), "html")
+            dropped, leftover = furniture
+            note = f"  [{dropped} furniture subtree(s) dropped]" if dropped else ""
+            if leftover:
+                # The class survived the drop, so the markup changed shape and the
+                # filter no longer reaches it. Say so loudly: a filter that stops
+                # matching turns a red gate green.
+                blind.append(f"{name}: furniture class still present after dropping "
+                             f"{dropped} subtree(s) — the filter may have gone blind")
+                note += "  ** LEFTOVER **"
+            if note:
+                print(f"  {name:24} {note.strip()}")
         else:
             if not os.path.exists(src):
                 print(f"  SKIP {name}: {src} absent")
                 continue
             raw = open(src, encoding="utf-8").read()
-            text = strip_markup(raw, "tex" if src.endswith(".tex") else "md")
+            text, _ = strip_markup(raw, "tex" if src.endswith(".tex") else "md")
 
         unmatched = []
         for kind, raw_value in sorted(claims_in(text)):
@@ -145,6 +207,8 @@ def main():
             print(f"      {', '.join(unmatched)}")
             failures.append((name, unmatched))
 
+    for b in blind:
+        print(f"\n  ! {b}")
     print(f"\n{checked} numeric claims checked · {allowed} explained by allowlist "
           f"· {len(figs)} figures recomputed from committed data")
 
