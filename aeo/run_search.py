@@ -14,13 +14,32 @@ ignores the tool would otherwise produce answers indistinguishable from the
 baseline, and the arm would report "no change" when it had simply not run. The
 flag comes from the provider's own response structure, not from the prose.
 """
-import json, os, re, sys, time, urllib.request
+import argparse, datetime, json, os, re, sys, time, urllib.request
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from prompts import PROMPTS
 
-OUT = Path(__file__).parent / "search_answers.jsonl"
+HERE = Path(__file__).parent
+RUNS = HERE / "runs"
+# The 14 September search-on run, published and cited. It keeps its original
+# path forever: four scripts and a guide point at it by name.
+BASELINE = HERE / "search_answers.jsonl"
+BASELINE_DATE = "2026-09-14"
 URL_RE = re.compile(r'https?://[^\s\)\]"<>]+')
+
+
+def run_path(date):
+    """One file per run. This arm is a PANEL, not a single before/after, and the
+    resume logic below is scoped to one run's file for a reason that cost nothing
+    to fix now and would have cost the whole measurement later: `done` used to be
+    seeded from the one shared file, so the second run would have found all 125
+    (model, prompt) pairs already present, skipped every one of them, and exited
+    `0 calls, $0.00`. A cadence that silently re-reports September forever looks
+    exactly like a launch that changed nothing."""
+    if date == BASELINE_DATE:
+        sys.exit(f"{BASELINE_DATE} is the published baseline at {BASELINE.name}. "
+                 f"It is never rewritten — pick today's date for a new run.")
+    return RUNS / f"search-{date}.jsonl"
 
 # List rates, each verified against the provider's own pricing page 2026-09-14.
 # ($/M input, $/M output, $ per search unit, unit). Gemini grounding is free for
@@ -162,13 +181,27 @@ def ask(model, prompt):
 
 
 def main():
-    models = sys.argv[1:] or ["gemini-3.6-flash", "gemini-3.1-pro-preview",
-                              "grok-4.6", "claude-opus-5", "gpt-5.5"]
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("models", nargs="*", help="models to run; default is all five")
+    ap.add_argument("--run", default=datetime.date.today().isoformat(),
+                    help="run date, YYYY-MM-DD. One file per run; resume is scoped to it.")
+    args = ap.parse_args()
+
+    models = args.models or ["gemini-3.6-flash", "gemini-3.1-pro-preview",
+                             "grok-4.6", "claude-opus-5", "gpt-5.5"]
+    OUT = run_path(args.run)
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+
+    # Scoped to THIS run only. Resuming an interrupted run is still free; resuming
+    # across runs is the bug described in run_path().
     done = set()
     if OUT.exists():
         for l in OUT.open():
             if l.strip():
                 r = json.loads(l); done.add((r["model"], r["prompt"]))
+    print(f"run {args.run} -> {OUT.relative_to(HERE)}"
+          f"   ({len(done)} answers already on disk, {len(models)} models)\n", flush=True)
     t0 = time.time()
     with OUT.open("a") as fh:
         for model in models:
@@ -187,6 +220,10 @@ def main():
                 SPENT[0] += cost; CALLS[0] += 1
                 blob = (text + " " + " ".join(urls)).lower()
                 fh.write(json.dumps({
+                    # Stamped on the row, not inferred from the filename: a row that
+                    # is copied or concatenated must still say when it was collected.
+                    "run": args.run, "ts": datetime.datetime.now(datetime.timezone.utc)
+                                              .isoformat(timespec="seconds"),
                     "model": model, "intent": intent, "prompt": prompt, "answer": text,
                     "searched": n > 0, "n_searches": n,
                     "cited_urls": sorted(set(urls))[:40],

@@ -91,7 +91,13 @@ days.
 
 ## For the search-enabled runs
 
-The re-runs on 14 September and 6 October produce new figures. They follow the
-same rule: the scorer output gets committed, `figures.py` gains the new family,
-and no number from either run appears in a post, a guide or a thread until
-`check_claims.py` passes with the new page in its surface list.
+The search arm is a **panel on a fortnightly cadence**, not a baseline and a
+single re-run. An earlier draft of this file named 6 October and the launch plan
+named 13 October; neither date survives, because the design that needed one
+specific re-run date has been replaced. `aeo/trend.py` reads every run and
+differences ours against the control brands measured in the same call.
+
+The publishing rule is unchanged and still binds: the scorer output gets
+committed, `figures.py` gains the new family, and no number from any run appears
+in a post, a guide or a thread until `check_claims.py` passes with the new page
+in its surface list.
