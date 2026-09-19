@@ -77,7 +77,7 @@ def _clean(u):
     u = u.strip(" .;:-")                       # a trailing full stop is not part of the unit
     for a, b in (("hectares", "ha"), ("hectare", "ha"), ("years", "year"), ("yr", "year"),
                  ("hrs", "hour"), ("hr", "hour"), ("tonnes", "tonne"), ("litres", "litre"),
-                 ("kilometres", "km"), ("kilometers", "km"), ("miles", "mile"),
+                 ("kilometres", "km"), ("kilometers", "km"), ("tkm", "tonne km"), ("miles", "mile"),
                  ("nights", "night"), ("rooms", "room"), ("items", "item"), ("days", "day")):
         u = re.sub(rf"\b{a}\b", b, u)
     u = re.sub(r"\(.*?\)", " ", u)
