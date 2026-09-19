@@ -204,6 +204,22 @@ Built by [`hf/build.py`](./hf/build.py), whose scored columns come from the same
 repo. It refuses to run without the held-out set available to check against, and
 [`hf/push.py`](./hf/push.py) re-checks every row before uploading.
 
+## A related tool: gwp-basis-check
+
+This benchmark measures whether a model recalls the right *number*. A neighbouring
+question is whether the software people already use recalls the right *report*.
+
+[**gwp-basis-check**](https://github.com/greencalculus/gwp-basis-check) finds
+greenhouse-gas warming-potential tables that contradict the IPCC assessment
+report they name — a field called `ar5` holding AR4's value for that gas. It is
+deliberately not a staleness check: AR4 and AR5 values are frequently correct,
+because the EU F-Gas Regulation mandates AR4 and DEFRA and UNFCCC reporting use
+AR5.
+
+It came out of an audit of our own corpus, which found 66 wrong cells out of 407
+checked. MIT, no dependencies, and it does not go stale — the assessment reports
+it rests on are closed.
+
 ## Citing this benchmark
 
 Archived on Zenodo. The **concept DOI** always resolves to the latest version;
