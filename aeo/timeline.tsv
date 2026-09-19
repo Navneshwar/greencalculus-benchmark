@@ -29,3 +29,4 @@ date	status	surface	what	url
 2026-09-10	pending	listing	APIs.guru #3277 — open, repo dormant since April, 2045 open issues	https://github.com/APIs-guru/openapi-directory/issues/3277
 2026-09-18	shipped	github	5 labelled contributor issues opened — benchmark #18-21, sdk #37 (org had 0 open issues)	https://github.com/greencalculus/greencalculus-benchmark/labels/good%20first%20issue
 2026-09-18	pending	listing	up-for-grabs.net #6150 — validator green, awaiting maintainer	https://github.com/up-for-grabs/up-for-grabs.net/pull/6150
+2026-09-19	shipped	github	Scorer gaps diagnosed and split into #23 (currency prefix, 12 answers) and #24 (extraction cap); first external contributor took #18	https://github.com/greencalculus/greencalculus-benchmark/issues/23
