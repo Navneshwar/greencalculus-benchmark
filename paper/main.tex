@@ -27,7 +27,7 @@
 
 \begin{abstract}
 \small
-Greenhouse-gas emission factors are an unusually clean probe for factual recall: each has one correct value, traceable to a named cell in a published document. We put 467 such questions to five frontier language models with no tools and no web access. Unaided accuracy ranged from 41.9\% to 65.2\% within 10\% of the published value. The more consequential result is the failure mode. When these models cited a source they named the \emph{correct} publisher 82--94\% of the time, yet in 31.6--58.8\% of answers that correct attribution accompanied an incorrect number. A wrong value with no provenance is caught in review; a wrong value carrying the right publisher's name is not. In a paired arm on 90 questions, giving two models a sourced lookup tool moved accuracy from 37.1\% to 98.7\% and from 50.0\% to 100.0\%, at 1.0--1.6 tool calls per question, while simultaneously converting refusals into correct answers. We release the questions, every raw model response, the scoring harness, a log of six bugs found in our own scorer, a canary string, and a pre-registered held-out split.
+Greenhouse-gas emission factors are an unusually clean probe for factual recall: each has one correct value, traceable to a named cell in a published document. We put 467 such questions to five frontier language models with no tools and no web access. Unaided accuracy ranged from 42.0\% to 65.2\% within 10\% of the published value. The more consequential result is the failure mode. When these models cited a source they named the \emph{correct} publisher 82--94\% of the time, yet in 31.6--58.8\% of answers that correct attribution accompanied an incorrect number. A wrong value with no provenance is caught in review; a wrong value carrying the right publisher's name is not. In a paired arm on 90 questions, giving two models a sourced lookup tool moved accuracy from 37.1\% to 98.7\% and from 50.0\% to 100.0\%, at 1.0--1.6 tool calls per question, while simultaneously converting refusals into correct answers. We release the questions, every raw model response, the scoring harness, a log of seven bugs found in our own scorer, a canary string, and a pre-registered held-out split.
 \end{abstract}
 
 \vspace{-0.6em}
@@ -65,7 +65,7 @@ Gemini 3.1 Pro    &  77 &  46 & 65.2\% & 12.0\% & 83.9\% & 35.3\% \\
 Grok 4.6          & 144 &  66 & 62.1\% & 21.6\% & 82.2\% & 31.6\% \\
 GPT-5.5           & 326 & 256 & 58.2\% & 53.7\% & 94.0\% & 41.0\% \\
 Claude Opus 5     & 430 & 315 & 45.7\% & 71.7\% & 89.9\% & 54.1\% \\
-Gemini 3.6 Flash  & 404 & 315 & 41.9\% & 71.7\% & 91.9\% & 58.8\% \\
+Gemini 3.6 Flash  & 404 & 312 & 42.0\% & 71.7\% & 91.9\% & 58.8\% \\
 \bottomrule
 \end{tabular}
 \vspace{-0.3em}

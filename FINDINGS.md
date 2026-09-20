@@ -14,7 +14,7 @@ batches of 30, **no tools and no lookups**. Run 2026-09-10.
 | Grok 4.6 | 66 | 62.1% | 86.4% | 13.6% |
 | GPT-5.5 | 256 | 58.2% | 85.2% | 14.8% |
 | Claude Opus 5 | 315 | 45.7% | 77.5% | 22.5% |
-| Gemini 3.6 Flash | 315 | 41.9% | 78.1% | 21.9% |
+| Gemini 3.6 Flash | 312 | 42.0% | 77.9% | 22.1% |
 
 **Of all 467 asked, how many did it get right?**
 
@@ -22,7 +22,7 @@ batches of 30, **no tools and no lookups**. Run 2026-09-10.
 |---|---:|---:|---:|---:|
 | GPT-5.5 | 326 | 141 | 149 | **31.9%** |
 | Claude Opus 5 | 430 | 37 | 144 | 30.8% |
-| Gemini 3.6 Flash | 404 | 63 | 132 | 28.3% |
+| Gemini 3.6 Flash | 404 | 63 | 131 | 28.1% |
 | Grok 4.6 | 144 | 323 | 41 | 8.8% |
 | Gemini 3.1 Pro | 77 | **390** | 30 | 6.4% |
 
@@ -59,7 +59,7 @@ and one knowledge base at two tiers:
 | Google model | Answered | Within 10% | Right source, wrong number |
 |---|---:|---:|---:|
 | Gemini 3.1 **Pro** | 77 / 467 | 65.2% | 35.3% |
-| Gemini 3.6 **Flash** | 404 / 467 | 41.9% | 58.8% |
+| Gemini 3.6 **Flash** | 404 / 467 | 42.0% | 58.8% |
 
 Same company, same training corpus. The fast tier answers five times as many
 questions and is right on far fewer of them, and when it cites the correct
@@ -155,7 +155,7 @@ revised short-lived hydrocarbon GWPs down by two orders of magnitude.
 
 ## Is the scorer trustworthy?
 
-It was wrong six times, and each is recorded because on a benchmark the
+It was wrong seven times, and each is recorded because on a benchmark the
 corrections matter more than the headline.
 
 1. **It compared numbers, not quantities.** The first version reported 35.6% and
@@ -180,11 +180,20 @@ corrections matter more than the headline.
    first separator.
 6. **A trailing full stop broke the match**, and `hectare`/`ha`, `year`/`yr` were
    treated as different units. Both folded.
+7. **It treated one currency as another.** Every entry in `CURRENCY` carried a
+   scale of 1.0, because we hold no exchange rates — so EUR, GBP and USD were
+   interchangeable and `85.00 EUR per tonne CO2e` scored 85 against a
+   `USD/tCO2e` truth, wrong by whatever the rate happened to be. `SEK` was
+   refused only by accident, having no scale at all. Three `gemini-3.6-flash`
+   carbon-price answers were affected and one of them was being counted
+   *correct*; `reconcile` now refuses a mismatched pair outright.
 
-Every one of these six was found before the number was published, and four of
-them were *understating* the result rather than flattering it. The rankings did
-not change through any of the revisions — which is the strongest evidence that
-they are real.
+Six of the seven were found before the number was published, and four of those
+were *understating* the result rather than flattering it. The seventh was found
+after publication, while reviewing a contributor's fix for the related bug in
+extraction, and is the reason the Gemini 3.6 Flash row moved from 41.9% to
+42.0%. The rankings did not change through any of the revisions — which is the
+strongest evidence that they are real.
 
 Two independent checks that the headline is real:
 
@@ -195,8 +204,9 @@ Two independent checks that the headline is real:
   hidden a bias, converting a fifth of it would have shifted the result.
 
 Unreconcilable units are reported **UNSCOREABLE** and leave the denominator,
-never counted wrong — mostly currency (a SEK answer against a USD truth) and
-prose units like "calendar year".
+never counted wrong — mostly currency (any answer whose currency is not the
+truth's; we convert between currencies never, not at a guessed rate) and prose
+units like "calendar year".
 
 ## Caveats, stated plainly
 

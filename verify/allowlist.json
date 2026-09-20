@@ -48,6 +48,12 @@
     "46.7%": "headline at the first scorer version",
     "46.9%": "headline at an intermediate scorer version",
     "47%": "hand adjudication of 45 pilot answers",
-    "35.6%": "citation rate at an earlier scorer version"
+    "35.6%": "citation rate at an earlier scorer version",
+    "41.9%": "Gemini 3.6 Flash BEFORE scorer bug 7 (EUR scored as USD); quoted in the bug log to state what the correction moved. The current value is results.comparison.gemini-3.6-flash.summary.within_10pct = 42.0"
+  },
+  "repo-readme": {
+    "_note": "README.md repeats the pilot-vs-hand-adjudication comparison. Only the two figures below are here; every headline figure in the README's tables is checked against results/*.json and must be updated, never allowlisted, when the scorer changes.",
+    "46.9%": "the pilot headline at the scorer version the hand adjudication was run against; the comparison is only meaningful at that version",
+    "47%": "hand adjudication of 45 pilot answers, read by a person -- no script can produce it"
   }
 }

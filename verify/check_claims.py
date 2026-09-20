@@ -27,7 +27,16 @@ LOCAL_SURFACES = [
     ("paper", os.path.join(ROOT, "paper", "main.tex")),
     ("dataset-card", os.path.join(ROOT, "hf", "README.md")),
     ("findings", os.path.join(ROOT, "FINDINGS.md")),
+    # The repo front page carries the same headline tables as FINDINGS.md. It was
+    # not checked, so a scorer change could leave it stating a number no script
+    # produces while the gate still printed PASS.
+    ("repo-readme", os.path.join(ROOT, "README.md")),
 ]
+
+# Surfaces that exist only over HTTP. --offline cannot check these, and saying so
+# matters: the docstring claims "the published study pages", and a PASS that
+# quietly skipped four of them is the kind of green that hides a stale headline.
+OFFLINE_BLIND = [name for name, _ in SURFACES]
 
 # A claim is a percentage, a correlation, or a thousands-separated count.
 CLAIM_RE = re.compile(
@@ -87,7 +96,14 @@ def drop_subtrees(text, classes=FURNITURE):
 
 def strip_markup(text, kind):
     if kind == "tex":
-        text = re.sub(r"%.*", "", text)                 # TeX comments
+        # Order matters, and getting it wrong silently blinds the gate to the
+        # whole preprint. A percentage in TeX is written `45.7\%`; stripping
+        # comments with a bare `%.*` treats that escape as a comment start and
+        # deletes the rest of the LINE -- every later figure in a table row, and
+        # the tail of the abstract, vanish before they are ever matched. Only an
+        # UNescaped % opens a comment, so require that the % is not preceded by
+        # a backslash, and unescape afterwards.
+        text = re.sub(r"(?<!\\)%.*", "", text)         # TeX comments
         text = text.replace(r"\%", "%").replace("{,}", ",")
         return text, 0
     text = re.sub(r"<!--.*?-->", " ", text, flags=re.S)  # engineering summaries
@@ -99,7 +115,7 @@ def strip_markup(text, kind):
 
 
 # Years, DOI paths and standard numbers are identifiers, not claims about data.
-NOT_A_CLAIM = re.compile(r"(?:doi\.org|zenodo|ISO|IEC|EN|BS|PAS|GHG Protocol)\s*[/:]?\s*[\d./\s-]*$", re.I)
+NOT_A_CLAIM = re.compile(r"(?:doi\.org|zenodo|ISO|IEC|EN|BS|PAS|GHG Protocol|seed)\s*[/:]?\s*[\d./\s-]*$", re.I)
 
 
 def is_identifier(value, before):
@@ -217,6 +233,16 @@ def main():
         print("      no allowlist entry explains. Either make it reproducible or")
         print("      justify it in verify/allowlist.json. Do not edit it away.")
         return 1
+    if args.offline:
+        # Never let --offline print the unqualified claim. The live pages carry the
+        # headline tables too, and a scorer change leaves them stale in exactly the
+        # same way -- a green --offline run is not evidence they were checked.
+        print("\nPASS (offline): every number on the surfaces checked above either")
+        print("      reproduces from committed data or carries a written justification.")
+        print("      NOT checked, because they exist only over HTTP: "
+              + ", ".join(OFFLINE_BLIND) + ".")
+        print("      Run without --offline before publishing a number.")
+        return 0
     print("\nPASS: every published number either reproduces from committed data")
     print("      or carries a written justification.")
     return 0

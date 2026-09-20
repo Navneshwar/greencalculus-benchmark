@@ -156,6 +156,16 @@ def recommendation_figures(figs):
         figs[f"aeo.vendor.{vendor}.named_in"] = pct(n, len(rows))
         figs[f"aeo.vendor.{vendor}.share_of_voice"] = pct(n, mentions)
         figs[f"aeo.vendor.{vendor}.named_first"] = first.get(vendor, 0)
+        # The prose quotes first-named as a PERCENTAGE ("43% first-named"); only
+        # the count was published as a figure, so the percentage was matching
+        # some unrelated figure that happened to round to the same integer.
+        figs[f"aeo.vendor.{vendor}.named_first_pct"] = pct(first.get(vendor, 0), len(rows))
+
+    # "93% of answers name one of those three" is a union over answers, not a sum
+    # of the three reach figures -- an answer naming two of them must count once.
+    TOP3 = ("Climatiq", "ecoinvent", "EXIOBASE")
+    figs["aeo.top3.named_in"] = pct(
+        sum(1 for r in rows if any(v in TOP3 for v in r["vendors_named"])), len(rows))
     figs["aeo.greencalculus.named_in_count"] = sum(
         1 for r in rows if r["names_greencalculus"])
 
@@ -223,7 +233,8 @@ def check_fresh():
     import filecmp, shutil, tempfile
     stale = []
     for script, out in (("compare.py", "results/comparison.json"),
-                        ("paired.py", "results/paired.json")):
+                        ("paired.py", "results/paired.json"),
+                        ("absolute.py", "results/absolute.json")):
         path = os.path.join(ROOT, out)
         if not os.path.exists(path):
             continue

@@ -26,6 +26,32 @@ jobs:
       - name: The pinned corpus-size specification reproduces
         run: python3 paper/corpus_size.py --sensitivity
 
+  # Every verify/test_*.py, discovered rather than listed: a test file that nobody
+  # runs is worse than no test, because it reads as cover. Two of these existed
+  # for a day before anything executed them in CI.
+  scorer-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Run every verify/test_*.py
+        run: |
+          set -e
+          found=0
+          for t in verify/test_*.py; do
+            [ -e "$t" ] || continue
+            found=$((found+1))
+            echo "::group::$t"
+            python3 "$t"
+            echo "::endgroup::"
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "::error::no verify/test_*.py found — the glob or the files moved"
+            exit 1
+          fi
+          echo "$found test file(s) passed"
+
   claims-are-backed:
     runs-on: ubuntu-latest
     steps:

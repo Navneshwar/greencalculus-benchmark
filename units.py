@@ -28,6 +28,16 @@ DIMENSIONLESS = {"fraction": 1.0, "ratio": 1.0, "dimensionless": 1.0, "%": 0.01,
                  "percent": 0.01, "pct": 0.01}
 CURRENCY = {"usd": 1.0, "us$": 1.0, "$": 1.0, "eur": 1.0, "gbp": 1.0, "sek": None}
 
+# Which currency each spelling IS. Every scale above is 1.0 because we hold no
+# exchange rates and will not: an FX rate is a price on a date, not a unit
+# conversion. That made two DIFFERENT currencies reconcile at 1:1, so a model
+# answering "85.00 EUR per tonne CO2e" scored 85 against a USD/tCO2e truth --
+# the same class of error as #23, and wrong by whatever the rate happens to be.
+# `sek: None` was already refusing this way by having no scale at all; the rest
+# were reconciling by accident. reconcile() now refuses on a mismatch instead.
+CURRENCY_FAMILY = {"usd": "usd", "us$": "usd", "$": "usd",
+                   "eur": "eur", "gbp": "gbp", "sek": "sek"}
+
 # carbon-species conversion: 1 kg C == 44/12 kg CO2
 C_TO_CO2 = 44.0 / 12.0
 
@@ -86,23 +96,29 @@ def parse_unit(u):
         return None
     for k, v in DIMENSIONLESS.items():
         if u == k or u.startswith(k + " "):
-            return {"num_scale": v, "species": None, "den_dim": None, "den_scale": 1.0}
+            return {"num_scale": v, "species": None, "den_dim": None,
+                    "num_currency": None, "den_scale": 1.0}
     num, den = (u.split(" per ", 1) + [""])[:2] if " per " in u else (u, "")
     sp = _species(num)
     num_scale = None
     # leading mass/currency token
+    num_currency = None
     m = re.match(r"([a-z$%]+(?:\s+ton(?:ne)?)?)", num)
     if m:
         tok = m.group(1)
         for table in (MASS, CURRENCY, ENERGY, VOLUME):
             if tok in table:
                 num_scale = table[tok]
+                if table is CURRENCY:
+                    num_currency = CURRENCY_FAMILY.get(tok)
                 break
     if num_scale is None:
         for tok in num.split():
             for table in (MASS, ENERGY, VOLUME, CURRENCY):
                 if tok in table:
                     num_scale = table[tok]
+                    if table is CURRENCY:
+                        num_currency = CURRENCY_FAMILY.get(tok)
                     break
             if num_scale is not None:
                 break
@@ -122,6 +138,7 @@ def parse_unit(u):
             den_dim, den_scale = ("other:" + den.split()[0] if den.split() else "other"), 1.0
     stop = {"of", "per", "the", "a", "good", "product", "basis", "input", "output"}
     return {"num_scale": num_scale, "species": sp, "den_dim": den_dim,
+            "num_currency": num_currency,
             "den_scale": den_scale if den_scale is not None else 1.0,
             "den_tokens": {t for t in den.split() if t not in stop}}
 
@@ -137,6 +154,13 @@ def reconcile(value, model_unit, truth_unit):
         return None, "unit not parseable"
     if a["num_scale"] is None or b["num_scale"] is None:
         return None, "unknown numerator unit"
+    # Two different currencies are not a unit conversion. Refuse rather than
+    # apply the 1.0 that sits in CURRENCY for want of an exchange rate.
+    # .get, not [...]: parse_unit returns from more than one place, and a new
+    # return path that forgets the key should not crash the whole scorer.
+    ca, cb = a.get("num_currency"), b.get("num_currency")
+    if ca and cb and ca != cb:
+        return None, f"currency mismatch ({ca} vs {cb}); no exchange rate is assumed"
     # denominators must be the same dimension
     da, db = a["den_dim"], b["den_dim"]
     if da != db:

@@ -48,13 +48,13 @@ reader stop checking.
 | Grok 4.6 | 144 | 62.1% | 8.8% | 31.6% |
 | GPT-5.5 | 326 | 58.2% | **31.9%** | 41.0% |
 | Claude Opus 5 | 430 | 45.7% | 30.8% | 54.1% |
-| Gemini 3.6 Flash | 404 | 41.9% | 28.3% | 58.8% |
+| Gemini 3.6 Flash | 404 | 42.0% | 28.1% | 58.8% |
 
 Those middle columns rank in opposite orders. **The more a model answers, the
 less each answer is worth** — the last column sorts with talkativeness.
 
 One vendor, two tiers, no cross-vendor argument: **Gemini Pro answers 77
-questions at 65.2%; Gemini Flash answers 404 at 41.9%** — and the fast tier, the
+questions at 65.2%; Gemini Flash answers 404 at 42.0%** — and the fast tier, the
 one that actually gets deployed behind a production pipeline, is wrong about the
 number more often than not even when it names the right publisher.
 
@@ -73,7 +73,7 @@ About **+61 points** for both, at 1.0–1.6 tool calls per question. The model i
 not handed the answer — it searches, picks the factor and reads the value, so
 this measures the integration, not a rigged prompt.
 
-Full write-up, caveats, and the log of the scorer's own six bugs:
+Full write-up, caveats, and the log of the scorer's own seven bugs:
 **[FINDINGS.md](./FINDINGS.md)**.
 
 ## A second study: who AI recommends

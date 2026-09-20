@@ -10,8 +10,8 @@
   "model": "gemini-3.6-flash",
   "answered": 404,
   "refused": 63,
-  "correct": 132,
-  "pct_of_all": 28.3
+  "correct": 131,
+  "pct_of_all": 28.1
  },
  {
   "model": "gpt-5.5",
