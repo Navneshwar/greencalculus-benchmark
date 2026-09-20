@@ -31,7 +31,7 @@
   "model": "claude-opus-5",
   "answered": 430,
   "refused": 37,
-  "correct": 144,
-  "pct_of_all": 30.8
+  "correct": 145,
+  "pct_of_all": 31.0
  }
 ]

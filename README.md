@@ -47,7 +47,7 @@ reader stop checking.
 | Gemini 3.1 Pro | 77 | **65.2%** | 6.4% | 35.3% |
 | Grok 4.6 | 144 | 62.1% | 8.8% | 31.6% |
 | GPT-5.5 | 326 | 58.2% | **31.9%** | 41.0% |
-| Claude Opus 5 | 430 | 46.5% | 30.8% | 53.1% |
+| Claude Opus 5 | 430 | 46.2% | 31.0% | 53.1% |
 | Gemini 3.6 Flash | 404 | 42.7% | 28.1% | 58.0% |
 
 Those middle columns rank in opposite orders. **The more a model answers, the
@@ -64,8 +64,8 @@ number more often than not even when it names the right publisher.
 
 | | Without tools | With GreenCalculus |
 |---|---|---|
-| Claude Opus 5 — within 10% | 37.7% | **98.7%** |
-| Claude Opus 5 — off by >50% | 24.6% | **1.3%** |
+| Claude Opus 5 — within 10% | 38.1% | **98.7%** |
+| Claude Opus 5 — off by >50% | 23.8% | **1.3%** |
 | GPT-5.5 — within 10% | 50.0% | **100.0%** |
 | GPT-5.5 — off by >50% | 19.6% | **0.0%** |
 

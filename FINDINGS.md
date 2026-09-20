@@ -13,7 +13,7 @@ batches of 30, **no tools and no lookups**. Run 2026-09-10.
 | Gemini 3.1 Pro | 46 | **65.2%** | 80.4% | 19.6% |
 | Grok 4.6 | 66 | 62.1% | 86.4% | 13.6% |
 | GPT-5.5 | 256 | 58.2% | 85.2% | 14.8% |
-| Claude Opus 5 | 310 | 46.5% | 78.7% | 21.3% |
+| Claude Opus 5 | 314 | 46.2% | 78.7% | 21.3% |
 | Gemini 3.6 Flash | 307 | 42.7% | 78.8% | 21.2% |
 
 **Of all 467 asked, how many did it get right?**
@@ -21,7 +21,7 @@ batches of 30, **no tools and no lookups**. Run 2026-09-10.
 | Model | Answered | Refused | Correct | Correct of all 467 |
 |---|---:|---:|---:|---:|
 | GPT-5.5 | 326 | 141 | 149 | **31.9%** |
-| Claude Opus 5 | 430 | 37 | 144 | 30.8% |
+| Claude Opus 5 | 430 | 37 | 145 | 31.0% |
 | Gemini 3.6 Flash | 404 | 63 | 131 | 28.1% |
 | Grok 4.6 | 144 | 323 | 41 | 8.8% |
 | Gemini 3.1 Pro | 77 | **390** | 30 | 6.4% |
@@ -83,8 +83,8 @@ ids with and without tools, so nothing hinges on sampling.
 | | Without tools | With GreenCalculus |
 |---|---|---|
 | **Claude Opus 5** — answered | 86 / 90 | 89 / 90 |
-| within 10% (of scoreable) | 37.7% | **98.7%** |
-| off by >50% | 24.6% | **1.3%** |
+| within 10% (of scoreable) | 38.1% | **98.7%** |
+| off by >50% | 23.8% | **1.3%** |
 | correct, of all 90 | 25.6% | **86.7%** |
 | **GPT-5.5** — answered | 62 / 90 | 87 / 90 |
 | within 10% (of scoreable) | 50.0% | **100.0%** |
@@ -211,7 +211,9 @@ Two independent checks that the headline is real:
   same 45 pilot answers.
 - **Against scorer coverage.** Closing successive gaps moved unscoreable from 137
   to 110 while the headline moved 46.7% -> 45.7%. If the unscoreable pile had
-  hidden a bias, converting a fifth of it would have shifted the result. Bug 8
+  hidden a bias, converting a fifth of it would have shifted the result. The
+  `tkm` alias then closed one more gap, moving the pile from 115 to 111 and the
+  headline from 46.5% to 46.2%. Bug 8
   then moved the pile the other way, from 110 to 115, by refusing ten answers
   that had been scored against an incompatible denominator; the headline moved to
   46.5%. A correction that makes the pile bigger is as much a coverage change as
