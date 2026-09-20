@@ -27,7 +27,7 @@
 
 \begin{abstract}
 \small
-Greenhouse-gas emission factors are an unusually clean probe for factual recall: each has one correct value, traceable to a named cell in a published document. We put 467 such questions to five frontier language models with no tools and no web access. Unaided accuracy ranged from 42.0\% to 65.2\% within 10\% of the published value. The more consequential result is the failure mode. When these models cited a source they named the \emph{correct} publisher 82--94\% of the time, yet in 31.6--58.8\% of answers that correct attribution accompanied an incorrect number. A wrong value with no provenance is caught in review; a wrong value carrying the right publisher's name is not. In a paired arm on 90 questions, giving two models a sourced lookup tool moved accuracy from 37.1\% to 98.7\% and from 50.0\% to 100.0\%, at 1.0--1.6 tool calls per question, while simultaneously converting refusals into correct answers. We release the questions, every raw model response, the scoring harness, a log of seven bugs found in our own scorer, a canary string, and a pre-registered held-out split.
+Greenhouse-gas emission factors are an unusually clean probe for factual recall: each has one correct value, traceable to a named cell in a published document. We put 467 such questions to five frontier language models with no tools and no web access. Unaided accuracy ranged from 42.7\% to 65.2\% within 10\% of the published value. The more consequential result is the failure mode. When these models cited a source they named the \emph{correct} publisher 82--94\% of the time, yet in 31.6--58.0\% of answers that correct attribution accompanied an incorrect number. A wrong value with no provenance is caught in review; a wrong value carrying the right publisher's name is not. In a paired arm on 90 questions, giving two models a sourced lookup tool moved accuracy from 37.7\% to 98.7\% and from 50.0\% to 100.0\%, at 1.0--1.6 tool calls per question, while simultaneously converting refusals into correct answers. We release the questions, every raw model response, the scoring harness, a log of eight bugs found in our own scorer, a canary string, and a pre-registered held-out split.
 \end{abstract}
 
 \vspace{-0.6em}
@@ -64,8 +64,8 @@ Model & Answered & Scored & Within 10\% & Cited & Correct publisher & \textbf{Ri
 Gemini 3.1 Pro    &  77 &  46 & 65.2\% & 12.0\% & 83.9\% & 35.3\% \\
 Grok 4.6          & 144 &  66 & 62.1\% & 21.6\% & 82.2\% & 31.6\% \\
 GPT-5.5           & 326 & 256 & 58.2\% & 53.7\% & 94.0\% & 41.0\% \\
-Claude Opus 5     & 430 & 315 & 45.7\% & 71.7\% & 89.9\% & 54.1\% \\
-Gemini 3.6 Flash  & 404 & 312 & 42.0\% & 71.7\% & 91.9\% & 58.8\% \\
+Claude Opus 5     & 430 & 310 & 46.5\% & 71.7\% & 89.9\% & 53.1\% \\
+Gemini 3.6 Flash  & 404 & 307 & 42.7\% & 71.7\% & 91.9\% & 58.0\% \\
 \bottomrule
 \end{tabular}
 \vspace{-0.3em}
@@ -75,7 +75,7 @@ Gemini 3.6 Flash  & 404 & 312 & 42.0\% & 71.7\% & 91.9\% & 58.8\% \\
 
 \textbf{Accuracy trades against coverage.} The two most accurate models are the two that answer least. Gemini 3.1 Pro declined 226 of 467 questions and Grok 4.6 declined 313; Claude Opus 5 declined 11. Read the accuracy column alone and caution looks like competence.
 
-\textbf{The failure mode.} Models are good at attribution and bad at values. Conditional on citing anything, they named the right publisher 82--94\% of the time --- but in 31.6\% to 58.8\% of scored answers that correct publisher appeared beside an incorrect number. The models are not confabulating a source to dress up a guess; they know where the number lives and misremember the number. Crucially, the tone is identical either way: we found no signal in the response that distinguishes a correct value from an incorrect one.
+\textbf{The failure mode.} Models are good at attribution and bad at values. Conditional on citing anything, they named the right publisher 82--94\% of the time --- but in 31.6\% to 58.0\% of scored answers that correct publisher appeared beside an incorrect number. The models are not confabulating a source to dress up a guess; they know where the number lives and misremember the number. Crucially, the tone is identical either way: we found no signal in the response that distinguishes a correct value from an incorrect one.
 
 This matters for review workflows. An unsourced figure invites checking. A figure carrying ``DEFRA 2026, Table 1'' does not.
 
@@ -89,7 +89,7 @@ This matters for review workflows. An unsourced figure invites checking. A figur
 \toprule
 Model & Unaided & With lookup & Mean tool calls \\
 \midrule
-Claude Opus 5 & 37.1\% ($n$=62) & \textbf{98.7\%} ($n$=79) & 1.62 \\
+Claude Opus 5 & 37.7\% ($n$=61) & \textbf{98.7\%} ($n$=79) & 1.62 \\
 GPT-5.5       & 50.0\% ($n$=46) & \textbf{100.0\%} ($n$=79) & 1.00 \\
 \bottomrule
 \end{tabular}
@@ -103,7 +103,7 @@ Accuracy and coverage moved together, which is unusual: GPT-5.5 answered 62 of 9
 \vspace{-0.3em}
 \section{Two explanations we tested and rejected}
 
-\textbf{Corpus size.} The intuition that finely-subdivided sources are harder to memorise does not explain the spread. Correlating a publisher's corpus size against its accuracy, across the 24 publishers with at least nine scored answers, gives $r = -0.28$ ($p = 0.19$; significance at $n = 24$ would require $|r| > 0.40$). We report the sign as stable and the significance as not. Across 48 variations of model pool and inclusion threshold, holding the scoring rule fixed, the coefficient stays negative throughout, between $-0.11$ and $-0.42$; 19 of the 48 reach $p < .05$, and nearly all of those sit at the loosest threshold, where publishers contributing a single scored answer enter the sample at 0\% or 100\%. We therefore claim a weak negative association we cannot separate from noise, not the absence of one. The scatter is the clearer argument: a 3-row source scores 55.6\%, a 19-row source 96.3\%, a 1{,}424-row source 50.7\%, and a 2{,}451-row source 17.4\%. Size does not order them.
+\textbf{Corpus size.} The intuition that finely-subdivided sources are harder to memorise does not explain the spread. Correlating a publisher's corpus size against its accuracy, across the 24 publishers with at least nine scored answers, gives $r = -0.29$ ($p = 0.17$; significance at $n = 24$ would require $|r| > 0.40$). We report the sign as stable and the significance as not. Across 48 variations of model pool and inclusion threshold, holding the scoring rule fixed, the coefficient stays negative throughout, between $-0.11$ and $-0.43$; 19 of the 48 reach $p < .05$, and nearly all of those sit at the loosest threshold, where publishers contributing a single scored answer enter the sample at 0\% or 100\%. We therefore claim a weak negative association we cannot separate from noise, not the absence of one. The scatter is the clearer argument: a 3-row source scores 55.6\%, a 19-row source 96.3\%, a 1{,}424-row source 50.7\%, and a 2{,}451-row source 17.4\%. Size does not order them.
 
 \textbf{Vintage confusion.} An older vintage of one publisher scored 11\% against the current year's 51\%, suggesting models quote the wrong edition. Reading the individual answers killed it: the sample is five questions on unusually obscure aggregates, and none of the answers resembles another vintage of the same factor.
 

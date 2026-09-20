@@ -47,14 +47,14 @@ reader stop checking.
 | Gemini 3.1 Pro | 77 | **65.2%** | 6.4% | 35.3% |
 | Grok 4.6 | 144 | 62.1% | 8.8% | 31.6% |
 | GPT-5.5 | 326 | 58.2% | **31.9%** | 41.0% |
-| Claude Opus 5 | 430 | 45.7% | 30.8% | 54.1% |
-| Gemini 3.6 Flash | 404 | 42.0% | 28.1% | 58.8% |
+| Claude Opus 5 | 430 | 46.5% | 30.8% | 53.1% |
+| Gemini 3.6 Flash | 404 | 42.7% | 28.1% | 58.0% |
 
 Those middle columns rank in opposite orders. **The more a model answers, the
 less each answer is worth** — the last column sorts with talkativeness.
 
 One vendor, two tiers, no cross-vendor argument: **Gemini Pro answers 77
-questions at 65.2%; Gemini Flash answers 404 at 42.0%** — and the fast tier, the
+questions at 65.2%; Gemini Flash answers 404 at 42.7%** — and the fast tier, the
 one that actually gets deployed behind a production pipeline, is wrong about the
 number more often than not even when it names the right publisher.
 
@@ -64,8 +64,8 @@ number more often than not even when it names the right publisher.
 
 | | Without tools | With GreenCalculus |
 |---|---|---|
-| Claude Opus 5 — within 10% | 37.1% | **98.7%** |
-| Claude Opus 5 — off by >50% | 25.8% | **1.3%** |
+| Claude Opus 5 — within 10% | 37.7% | **98.7%** |
+| Claude Opus 5 — off by >50% | 24.6% | **1.3%** |
 | GPT-5.5 — within 10% | 50.0% | **100.0%** |
 | GPT-5.5 — off by >50% | 19.6% | **0.0%** |
 
@@ -73,7 +73,7 @@ About **+61 points** for both, at 1.0–1.6 tool calls per question. The model i
 not handed the answer — it searches, picks the factor and reads the value, so
 this measures the integration, not a rigged prompt.
 
-Full write-up, caveats, and the log of the scorer's own seven bugs:
+Full write-up, caveats, and the log of the scorer's own eight bugs:
 **[FINDINGS.md](./FINDINGS.md)**.
 
 ## A second study: who AI recommends

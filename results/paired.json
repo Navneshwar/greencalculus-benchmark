@@ -5,10 +5,10 @@
   "avg_tool_calls": 1.62,
   "without": {
    "answered": 86,
-   "scoreable": 62,
-   "within10": 37.1,
+   "scoreable": 61,
+   "within10": 37.7,
    "correct_of_all": 25.6,
-   "wrong50": 25.8
+   "wrong50": 24.6
   },
   "with": {
    "answered": 89,

@@ -24,6 +24,16 @@ ENERGY = {"wh": 1e-3, "kwh": 1.0, "mwh": 1e3, "gwh": 1e6, "twh": 1e9,
 VOLUME = {"ml": 1e-3, "l": 1.0, "litre": 1.0, "liter": 1.0, "m3": 1000.0,
           "gallon": 3.78541, "gal": 3.78541}
 LENGTH = {"m": 1e-3, "km": 1.0, "mile": 1.60934, "mi": 1.60934}
+# base: m2. Area had no table, so a per-square-metre denominator degraded to the
+# catch-all "other:m2" and was compared as a STRING. That is what let a bare
+# `per yr` answer match a `kWh per m2 per year` truth: both became "other:*", the
+# containment rule saw {year} as a subset of {m2, year}, and a whole-building
+# annual total was scored as a per-square-metre intensity. Area is a dimension,
+# so giving it a table is enough -- the den_dim comparison then refuses the pair
+# on its own, with no new rule and no list of exception words to maintain.
+# 19 truth units are per-m2, 5 per-hectare, 1 per-acre.
+AREA = {"m2": 1.0, "sqm": 1.0, "ft2": 0.092903, "sqft": 0.092903,
+        "ha": 1e4, "hectare": 1e4, "acre": 4046.86}
 DIMENSIONLESS = {"fraction": 1.0, "ratio": 1.0, "dimensionless": 1.0, "%": 0.01,
                  "percent": 0.01, "pct": 0.01}
 CURRENCY = {"usd": 1.0, "us$": 1.0, "$": 1.0, "eur": 1.0, "gbp": 1.0, "sek": None}
@@ -126,8 +136,8 @@ def parse_unit(u):
         return None
     den_dim = den_scale = None
     if den:
-        for name, table in (("energy", ENERGY), ("volume", VOLUME), ("length", LENGTH),
-                            ("mass", MASS)):
+        for name, table in (("energy", ENERGY), ("volume", VOLUME), ("area", AREA),
+                            ("length", LENGTH), ("mass", MASS)):
             for tok in den.split():
                 if tok in table:
                     den_dim, den_scale = name, table[tok]

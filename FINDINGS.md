@@ -13,8 +13,8 @@ batches of 30, **no tools and no lookups**. Run 2026-09-10.
 | Gemini 3.1 Pro | 46 | **65.2%** | 80.4% | 19.6% |
 | Grok 4.6 | 66 | 62.1% | 86.4% | 13.6% |
 | GPT-5.5 | 256 | 58.2% | 85.2% | 14.8% |
-| Claude Opus 5 | 315 | 45.7% | 77.5% | 22.5% |
-| Gemini 3.6 Flash | 312 | 42.0% | 77.9% | 22.1% |
+| Claude Opus 5 | 310 | 46.5% | 78.7% | 21.3% |
+| Gemini 3.6 Flash | 307 | 42.7% | 78.8% | 21.2% |
 
 **Of all 467 asked, how many did it get right?**
 
@@ -40,8 +40,8 @@ and at n = 5 that is suggestive, not significant:
 | Grok 4.6 | 144 | 31.6% |
 | Gemini 3.1 Pro | 77 | 35.3% |
 | GPT-5.5 | 326 | 41.0% |
-| Claude Opus 5 | 430 | 54.1% |
-| Gemini 3.6 Flash | 404 | 58.8% |
+| Claude Opus 5 | 430 | 53.1% |
+| Gemini 3.6 Flash | 404 | 58.0% |
 
 This is not a story about which vendor is smartest. It is about **calibration** —
 whether a model knows where its knowledge ends. Gemini 3.1 Pro refused 390 of 467
@@ -59,7 +59,7 @@ and one knowledge base at two tiers:
 | Google model | Answered | Within 10% | Right source, wrong number |
 |---|---:|---:|---:|
 | Gemini 3.1 **Pro** | 77 / 467 | 65.2% | 35.3% |
-| Gemini 3.6 **Flash** | 404 / 467 | 42.0% | 58.8% |
+| Gemini 3.6 **Flash** | 404 / 467 | 42.7% | 58.0% |
 
 Same company, same training corpus. The fast tier answers five times as many
 questions and is right on far fewer of them, and when it cites the correct
@@ -83,8 +83,8 @@ ids with and without tools, so nothing hinges on sampling.
 | | Without tools | With GreenCalculus |
 |---|---|---|
 | **Claude Opus 5** — answered | 86 / 90 | 89 / 90 |
-| within 10% (of scoreable) | 37.1% | **98.7%** |
-| off by >50% | 25.8% | **1.3%** |
+| within 10% (of scoreable) | 37.7% | **98.7%** |
+| off by >50% | 24.6% | **1.3%** |
 | correct, of all 90 | 25.6% | **86.7%** |
 | **GPT-5.5** — answered | 62 / 90 | 87 / 90 |
 | within 10% (of scoreable) | 50.0% | **100.0%** |
@@ -155,7 +155,7 @@ revised short-lived hydrocarbon GWPs down by two orders of magnitude.
 
 ## Is the scorer trustworthy?
 
-It was wrong seven times, and each is recorded because on a benchmark the
+It was wrong eight times, and each is recorded because on a benchmark the
 corrections matter more than the headline.
 
 1. **It compared numbers, not quantities.** The first version reported 35.6% and
@@ -187,13 +187,23 @@ corrections matter more than the headline.
    refused only by accident, having no scale at all. Three `gemini-3.6-flash`
    carbon-price answers were affected and one of them was being counted
    *correct*; `reconcile` now refuses a mismatched pair outright.
+8. **It compared a rate per square metre with a rate per nothing.** Area had no
+   dimension table, so a `kWh per m2 per year` denominator degraded to the
+   catch-all `other:m2` and was compared as a string — which put it in front of a
+   containment rule, and `{year}` is a subset of `{m2, year}`. Ten answers giving
+   a whole-building annual total were scored against a per-square-metre truth,
+   the worst of them off by a factor of 200. Giving area a table was the whole fix:
+   the dimension comparison then refuses the pair on its own.
 
-Six of the seven were found before the number was published, and four of those
-were *understating* the result rather than flattering it. The seventh was found
-after publication, while reviewing a contributor's fix for the related bug in
-extraction, and is the reason the Gemini 3.6 Flash row moved from 41.9% to
-42.0%. The rankings did not change through any of the revisions — which is the
-strongest evidence that they are real.
+Six of the eight were found before the number was published, and four of those
+were *understating* the result rather than flattering it. Two were found after,
+while reviewing contributors' fixes to the same module: bug 7 moved the Gemini
+3.6 Flash row from 41.9% to 42.0%, and bug 8 moved it again to 42.7% and Claude
+from 45.7% to 46.5%. Both of those later corrections *raised* the headline, which
+is the direction that deserves the most scrutiny — the reason to make them is
+that the scorer was comparing quantities that are not comparable, not that the
+numbers improve. The rankings did not change through any of the revisions, which
+is the strongest evidence that they are real.
 
 Two independent checks that the headline is real:
 
@@ -201,7 +211,11 @@ Two independent checks that the headline is real:
   same 45 pilot answers.
 - **Against scorer coverage.** Closing successive gaps moved unscoreable from 137
   to 110 while the headline moved 46.7% -> 45.7%. If the unscoreable pile had
-  hidden a bias, converting a fifth of it would have shifted the result.
+  hidden a bias, converting a fifth of it would have shifted the result. Bug 8
+  then moved the pile the other way, from 110 to 115, by refusing ten answers
+  that had been scored against an incompatible denominator; the headline moved to
+  46.5%. A correction that makes the pile bigger is as much a coverage change as
+  one that shrinks it, and it belongs in the same sequence.
 
 Unreconcilable units are reported **UNSCOREABLE** and leave the denominator,
 never counted wrong — mostly currency (any answer whose currency is not the
